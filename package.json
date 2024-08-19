@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.4",
     "devicons-react": "^1.3.0",
     "framer-motion": "^11.3.28",
     "my-portfolio-website": "file:",

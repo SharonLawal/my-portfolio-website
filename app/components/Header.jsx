@@ -31,7 +31,7 @@ const Header = () => {
       </div>
 
       {/* Navigation Menu */}
-      <nav className={`lg:flex flex-col lg:flex-row lg:space-x-6 lg:items-center transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'} fixed lg:static top-16 right-0 bg-blue-800 lg:bg-transparent lg:shadow-none shadow-lg lg:p-0 p-6 space-y-4 lg:space-y-0`}>
+      <nav className={`lg:flex flex-col lg:flex-row lg:space-x-6 lg:items-center transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'} fixed lg:static top-16 right-0 bg-blue-800 lg:bg-transparent lg:shadow-none shadow-lg lg:p-0 p-6 space-y-4 lg:space-y-0 rounded-3xl`}>
         <ul className="flex flex-col lg:flex-row lg:space-x-6 space-y-4 lg:space-y-0">
           <li>
             <a

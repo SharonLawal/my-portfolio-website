@@ -1,11 +1,27 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FaPaperPlane } from 'react-icons/fa';
 import Illustration from '../assets/Illustartion.png';
 
 const Contact = () => {
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Here you can send the data to your server or API
+    // For now, let's just log the email and message to the console
+    console.log('Email:', email);
+    console.log('Message:', message);
+    
+    // Clear the form fields after submission
+    setEmail('');
+    setMessage('');
+  };
+
   return (
     <section id="contact" className="py-12 bg-gray-100">
       <div className="container mx-auto px-6 text-center">
@@ -49,19 +65,25 @@ const Contact = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <form className="w-full max-w-md flex flex-col space-y-4">
+          <form className="w-full max-w-md flex flex-col space-y-4" onSubmit={handleSubmit}>
             <input
               type="email"
               placeholder="Enter email address"
               className="p-3 border shadow-lg text-black rounded focus:outline-none focus:border-indigo-500"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <textarea
               placeholder="Enter message"
               className="p-3 border shadow-lg text-black rounded h-32 focus:outline-none focus:border-indigo-500"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
             ></textarea>
             <button
               type="submit"
-              className="p-3 bg-blue-900 w-1/2 shadow-lg text-white rounded hover:bg-blue-950 transition duration-300 flex items-center justify-center space-x-2 self-center"
+              className="p-3 bg-blue-900 w-1/2 shadow-lg text-white rounded-full hover:bg-blue-950 transition duration-300 flex items-center justify-center space-x-2 self-center"
             >
               <span>Send Message</span>
               <FaPaperPlane />
